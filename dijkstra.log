@@ -1,0 +1,154 @@
+2024-06-08 10:23:51,795 - INFO - Created an empty graph.
+2024-06-08 10:23:51,795 - DEBUG - Added vertex: A
+2024-06-08 10:23:51,795 - DEBUG - Added vertex: B
+2024-06-08 10:23:51,795 - DEBUG - Added edge: (A, B, weight=4)
+2024-06-08 10:23:51,795 - WARNING - Vertex A already exists. Skipping.
+2024-06-08 10:23:51,795 - DEBUG - Added vertex: C
+2024-06-08 10:23:51,795 - DEBUG - Added edge: (A, C, weight=2)
+2024-06-08 10:23:51,795 - WARNING - Vertex B already exists. Skipping.
+2024-06-08 10:23:51,795 - WARNING - Vertex C already exists. Skipping.
+2024-06-08 10:23:51,795 - DEBUG - Added edge: (B, C, weight=1)
+2024-06-08 10:23:51,795 - WARNING - Vertex B already exists. Skipping.
+2024-06-08 10:23:51,795 - DEBUG - Added vertex: D
+2024-06-08 10:23:51,808 - DEBUG - Added edge: (B, D, weight=5)
+2024-06-08 10:23:51,808 - WARNING - Vertex C already exists. Skipping.
+2024-06-08 10:23:51,808 - WARNING - Vertex D already exists. Skipping.
+2024-06-08 10:23:51,808 - DEBUG - Added edge: (C, D, weight=8)
+2024-06-08 10:23:51,808 - WARNING - Vertex C already exists. Skipping.
+2024-06-08 10:23:51,808 - DEBUG - Added vertex: E
+2024-06-08 10:23:51,808 - DEBUG - Added edge: (C, E, weight=10)
+2024-06-08 10:23:51,808 - WARNING - Vertex D already exists. Skipping.
+2024-06-08 10:23:51,808 - WARNING - Vertex E already exists. Skipping.
+2024-06-08 10:23:51,808 - DEBUG - Added edge: (D, E, weight=2)
+2024-06-08 10:23:51,808 - WARNING - Vertex D already exists. Skipping.
+2024-06-08 10:23:51,808 - DEBUG - Added vertex: F
+2024-06-08 10:23:51,808 - DEBUG - Added edge: (D, F, weight=6)
+2024-06-08 10:23:51,808 - WARNING - Vertex E already exists. Skipping.
+2024-06-08 10:23:51,808 - WARNING - Vertex F already exists. Skipping.
+2024-06-08 10:23:51,808 - DEBUG - Added edge: (E, F, weight=3)
+2024-06-08 10:23:51,808 - INFO - Starting Dijkstra's algorithm from source vertex: A
+2024-06-08 10:23:51,808 - DEBUG - Visiting current vertex: A
+2024-06-08 10:23:51,808 - DEBUG - Retrieved neighbors for vertex A: {'B': 4, 'C': 2}
+2024-06-08 10:23:51,808 - DEBUG - Updated distance to B via A to 4
+2024-06-08 10:23:51,808 - DEBUG - Updated distance to C via A to 2
+2024-06-08 10:23:51,808 - DEBUG - Visiting current vertex: C
+2024-06-08 10:23:51,808 - DEBUG - Retrieved neighbors for vertex C: {'A': 2, 'B': 1, 'D': 8, 'E': 10}
+2024-06-08 10:23:51,808 - DEBUG - Updated distance to B via C to 3
+2024-06-08 10:23:51,808 - DEBUG - Updated distance to D via C to 10
+2024-06-08 10:23:51,808 - DEBUG - Updated distance to E via C to 12
+2024-06-08 10:23:51,808 - DEBUG - Visiting current vertex: B
+2024-06-08 10:23:51,808 - DEBUG - Retrieved neighbors for vertex B: {'A': 4, 'C': 1, 'D': 5}
+2024-06-08 10:23:51,808 - DEBUG - Updated distance to D via B to 8
+2024-06-08 10:23:51,808 - DEBUG - Visiting current vertex: D
+2024-06-08 10:23:51,808 - DEBUG - Retrieved neighbors for vertex D: {'B': 5, 'C': 8, 'E': 2, 'F': 6}
+2024-06-08 10:23:51,808 - DEBUG - Updated distance to E via D to 10
+2024-06-08 10:23:51,808 - DEBUG - Updated distance to F via D to 14
+2024-06-08 10:23:51,808 - DEBUG - Visiting current vertex: E
+2024-06-08 10:23:51,808 - DEBUG - Retrieved neighbors for vertex E: {'C': 10, 'D': 2, 'F': 3}
+2024-06-08 10:23:51,808 - DEBUG - Updated distance to F via E to 13
+2024-06-08 10:23:51,808 - DEBUG - Visiting current vertex: F
+2024-06-08 10:23:51,808 - DEBUG - Retrieved neighbors for vertex F: {'D': 6, 'E': 3}
+2024-06-08 10:23:51,808 - INFO - Dijkstra's algorithm completed.
+2024-06-08 14:56:22,859 - INFO - Created an empty graph.
+2024-06-08 14:56:22,859 - DEBUG - Added vertex: A
+2024-06-08 14:56:22,859 - DEBUG - Added vertex: B
+2024-06-08 14:56:22,859 - DEBUG - Added edge: (A, B, weight=4)
+2024-06-08 14:56:22,859 - WARNING - Vertex A already exists. Skipping.
+2024-06-08 14:56:22,859 - DEBUG - Added vertex: C
+2024-06-08 14:56:22,859 - DEBUG - Added edge: (A, C, weight=2)
+2024-06-08 14:56:22,859 - WARNING - Vertex B already exists. Skipping.
+2024-06-08 14:56:22,859 - WARNING - Vertex C already exists. Skipping.
+2024-06-08 14:56:22,859 - DEBUG - Added edge: (B, C, weight=1)
+2024-06-08 14:56:22,859 - WARNING - Vertex B already exists. Skipping.
+2024-06-08 14:56:22,859 - DEBUG - Added vertex: D
+2024-06-08 14:56:22,859 - DEBUG - Added edge: (B, D, weight=5)
+2024-06-08 14:56:22,859 - WARNING - Vertex C already exists. Skipping.
+2024-06-08 14:56:22,859 - WARNING - Vertex D already exists. Skipping.
+2024-06-08 14:56:22,859 - DEBUG - Added edge: (C, D, weight=8)
+2024-06-08 14:56:22,860 - WARNING - Vertex C already exists. Skipping.
+2024-06-08 14:56:22,860 - DEBUG - Added vertex: E
+2024-06-08 14:56:22,860 - DEBUG - Added edge: (C, E, weight=10)
+2024-06-08 14:56:22,860 - WARNING - Vertex D already exists. Skipping.
+2024-06-08 14:56:22,860 - WARNING - Vertex E already exists. Skipping.
+2024-06-08 14:56:22,860 - DEBUG - Added edge: (D, E, weight=2)
+2024-06-08 14:56:22,860 - WARNING - Vertex D already exists. Skipping.
+2024-06-08 14:56:22,860 - DEBUG - Added vertex: F
+2024-06-08 14:56:22,860 - DEBUG - Added edge: (D, F, weight=6)
+2024-06-08 14:56:22,860 - WARNING - Vertex E already exists. Skipping.
+2024-06-08 14:56:22,860 - WARNING - Vertex F already exists. Skipping.
+2024-06-08 14:56:22,860 - DEBUG - Added edge: (E, F, weight=3)
+2024-06-08 14:56:22,860 - INFO - Starting Dijkstra's algorithm from source vertex: A
+2024-06-08 14:56:22,860 - DEBUG - Visiting current vertex: A
+2024-06-08 14:56:22,860 - DEBUG - Retrieved neighbors for vertex A: {'B': 4, 'C': 2}
+2024-06-08 14:56:22,860 - DEBUG - Updated distance to B via A to 4
+2024-06-08 14:56:22,860 - DEBUG - Updated distance to C via A to 2
+2024-06-08 14:56:22,860 - DEBUG - Visiting current vertex: C
+2024-06-08 14:56:22,860 - DEBUG - Retrieved neighbors for vertex C: {'A': 2, 'B': 1, 'D': 8, 'E': 10}
+2024-06-08 14:56:22,860 - DEBUG - Updated distance to B via C to 3
+2024-06-08 14:56:22,860 - DEBUG - Updated distance to D via C to 10
+2024-06-08 14:56:22,860 - DEBUG - Updated distance to E via C to 12
+2024-06-08 14:56:22,860 - DEBUG - Visiting current vertex: B
+2024-06-08 14:56:22,860 - DEBUG - Retrieved neighbors for vertex B: {'A': 4, 'C': 1, 'D': 5}
+2024-06-08 14:56:22,860 - DEBUG - Updated distance to D via B to 8
+2024-06-08 14:56:22,860 - DEBUG - Visiting current vertex: D
+2024-06-08 14:56:22,860 - DEBUG - Retrieved neighbors for vertex D: {'B': 5, 'C': 8, 'E': 2, 'F': 6}
+2024-06-08 14:56:22,860 - DEBUG - Updated distance to E via D to 10
+2024-06-08 14:56:22,860 - DEBUG - Updated distance to F via D to 14
+2024-06-08 14:56:22,860 - DEBUG - Visiting current vertex: E
+2024-06-08 14:56:22,860 - DEBUG - Retrieved neighbors for vertex E: {'C': 10, 'D': 2, 'F': 3}
+2024-06-08 14:56:22,860 - DEBUG - Updated distance to F via E to 13
+2024-06-08 14:56:22,860 - DEBUG - Visiting current vertex: F
+2024-06-08 14:56:22,860 - DEBUG - Retrieved neighbors for vertex F: {'D': 6, 'E': 3}
+2024-06-08 14:56:22,860 - INFO - Dijkstra's algorithm completed.
+2024-06-08 14:58:52,871 - INFO - Created an empty graph.
+2024-06-08 14:58:52,871 - DEBUG - Added vertex: A
+2024-06-08 14:58:52,871 - DEBUG - Added vertex: B
+2024-06-08 14:58:52,871 - DEBUG - Added edge: (A, B, weight=4)
+2024-06-08 14:58:52,871 - WARNING - Vertex A already exists. Skipping.
+2024-06-08 14:58:52,871 - DEBUG - Added vertex: C
+2024-06-08 14:58:52,871 - DEBUG - Added edge: (A, C, weight=2)
+2024-06-08 14:58:52,871 - WARNING - Vertex B already exists. Skipping.
+2024-06-08 14:58:52,871 - WARNING - Vertex C already exists. Skipping.
+2024-06-08 14:58:52,871 - DEBUG - Added edge: (B, C, weight=1)
+2024-06-08 14:58:52,871 - WARNING - Vertex B already exists. Skipping.
+2024-06-08 14:58:52,871 - DEBUG - Added vertex: D
+2024-06-08 14:58:52,871 - DEBUG - Added edge: (B, D, weight=5)
+2024-06-08 14:58:52,872 - WARNING - Vertex C already exists. Skipping.
+2024-06-08 14:58:52,872 - WARNING - Vertex D already exists. Skipping.
+2024-06-08 14:58:52,872 - DEBUG - Added edge: (C, D, weight=8)
+2024-06-08 14:58:52,872 - WARNING - Vertex C already exists. Skipping.
+2024-06-08 14:58:52,872 - DEBUG - Added vertex: E
+2024-06-08 14:58:52,872 - DEBUG - Added edge: (C, E, weight=10)
+2024-06-08 14:58:52,872 - WARNING - Vertex D already exists. Skipping.
+2024-06-08 14:58:52,872 - WARNING - Vertex E already exists. Skipping.
+2024-06-08 14:58:52,872 - DEBUG - Added edge: (D, E, weight=2)
+2024-06-08 14:58:52,872 - WARNING - Vertex D already exists. Skipping.
+2024-06-08 14:58:52,872 - DEBUG - Added vertex: F
+2024-06-08 14:58:52,872 - DEBUG - Added edge: (D, F, weight=6)
+2024-06-08 14:58:52,872 - WARNING - Vertex E already exists. Skipping.
+2024-06-08 14:58:52,872 - WARNING - Vertex F already exists. Skipping.
+2024-06-08 14:58:52,872 - DEBUG - Added edge: (E, F, weight=3)
+2024-06-08 14:58:52,872 - INFO - Starting Dijkstra's algorithm from source vertex: A
+2024-06-08 14:58:52,872 - DEBUG - Visiting current vertex: A
+2024-06-08 14:58:52,872 - DEBUG - Retrieved neighbors for vertex A: {'B': 4, 'C': 2}
+2024-06-08 14:58:52,872 - DEBUG - Updated distance to B via A to 4
+2024-06-08 14:58:52,872 - DEBUG - Updated distance to C via A to 2
+2024-06-08 14:58:52,872 - DEBUG - Visiting current vertex: C
+2024-06-08 14:58:52,872 - DEBUG - Retrieved neighbors for vertex C: {'A': 2, 'B': 1, 'D': 8, 'E': 10}
+2024-06-08 14:58:52,872 - DEBUG - Updated distance to B via C to 3
+2024-06-08 14:58:52,872 - DEBUG - Updated distance to D via C to 10
+2024-06-08 14:58:52,872 - DEBUG - Updated distance to E via C to 12
+2024-06-08 14:58:52,872 - DEBUG - Visiting current vertex: B
+2024-06-08 14:58:52,872 - DEBUG - Retrieved neighbors for vertex B: {'A': 4, 'C': 1, 'D': 5}
+2024-06-08 14:58:52,872 - DEBUG - Updated distance to D via B to 8
+2024-06-08 14:58:52,872 - DEBUG - Visiting current vertex: D
+2024-06-08 14:58:52,872 - DEBUG - Retrieved neighbors for vertex D: {'B': 5, 'C': 8, 'E': 2, 'F': 6}
+2024-06-08 14:58:52,872 - DEBUG - Updated distance to E via D to 10
+2024-06-08 14:58:52,872 - DEBUG - Updated distance to F via D to 14
+2024-06-08 14:58:52,872 - DEBUG - Visiting current vertex: E
+2024-06-08 14:58:52,872 - DEBUG - Retrieved neighbors for vertex E: {'C': 10, 'D': 2, 'F': 3}
+2024-06-08 14:58:52,872 - DEBUG - Updated distance to F via E to 13
+2024-06-08 14:58:52,872 - DEBUG - Visiting current vertex: F
+2024-06-08 14:58:52,873 - DEBUG - Retrieved neighbors for vertex F: {'D': 6, 'E': 3}
+2024-06-08 14:58:52,873 - INFO - Dijkstra's algorithm completed.
+2024-06-08 14:58:52,874 - INFO - Graph data saved to graph.json
