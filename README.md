@@ -23,7 +23,6 @@ This documentation provides a detailed explanation of the Python code that imple
   - [Error Handling](#error-handling)
   - [Key Features and Best Practices](#key-features-and-best-practices)
   - [Contributing](#contributing)
-- [Utility Graph Drawing code](#utility-graph-drawing-code)
 - [Graph Visualization with Tkinter](#graph-visualization-with-tkinter)
   - [Features:](#features)
   - [Installation:](#installation)
@@ -51,7 +50,7 @@ The code is structured into four main parts:
 import logging
 
 # Configure logging to write to a file
-logging.basicConfig(filename='dijkstra.log', level=logging.DEBUG, 
+logging.basicConfig(filename='dijkstra.log', level=logging.DEBUG,
                     format='%(asctime)s - %(levelname)s - %(message)s')
 ```
 
@@ -68,7 +67,7 @@ class Graph:
     Represents a weighted graph using an adjacency list.
 
     Attributes:
-        vertices (dict): A dictionary where keys are vertices and values are 
+        vertices (dict): A dictionary where keys are vertices and values are
                         dictionaries representing neighbors and edge weights.
     """
 
@@ -81,10 +80,10 @@ class Graph:
 #### 2.1. Attributes
 
 - `vertices (dict)`: A dictionary that stores the vertices and their connections.
-   - Keys: Vertices of the graph.
-   - Values: Dictionaries representing the neighbors of each vertex.
-     - Keys: Neighboring vertices.
-     - Values: Weights of the edges connecting the vertex to its neighbors.
+  - Keys: Vertices of the graph.
+  - Values: Dictionaries representing the neighbors of each vertex.
+    - Keys: Neighboring vertices.
+    - Values: Weights of the edges connecting the vertex to its neighbors.
 
 #### 2.2. Methods
 
@@ -122,7 +121,7 @@ class Graph:
                 logging.warning(f"Vertex {vertex} already exists. Skipping.")
         except TypeError as e:
             logging.error(f"Invalid vertex type: {type(vertex)}. Error: {e}")
-            raise  
+            raise
 ```
 
 - `add_vertex(self, vertex)`: Adds a vertex to the graph if it doesn't already exist.
@@ -184,7 +183,7 @@ class Graph:
 ```
 
 - `get_neighbors(self, vertex)`: Retrieves the neighbors of a given `vertex`.
-  - It uses the `get()` method on the `self.vertices` dictionary to safely access the neighbors of the vertex. 
+  - It uses the `get()` method on the `self.vertices` dictionary to safely access the neighbors of the vertex.
   - If the vertex doesn't exist, it returns an empty dictionary to avoid raising a `KeyError`.
   - The method logs a debug message indicating the neighbors retrieved for the given vertex.
 
@@ -219,7 +218,7 @@ def dijkstra(graph, source):
     distances = {vertex: float('inf') for vertex in graph.vertices}
     predecessors = {vertex: None for vertex in graph.vertices}
     distances[source] = 0
-    unvisited = list(graph.vertices)  
+    unvisited = list(graph.vertices)
 
     logging.info(f"Starting Dijkstra's algorithm from source vertex: {source}")
 
@@ -258,10 +257,10 @@ def dijkstra(graph, source):
       - The `current_vertex` is removed from the `unvisited` list.
       - For each `neighbor` of the `current_vertex`, it calculates the `new_distance` from the source to the `neighbor` through the `current_vertex`.
       - If the `new_distance` is shorter than the current `distances[neighbor]`, it updates `distances[neighbor]` and sets the `predecessor` of the `neighbor` to the `current_vertex`.
- - **Return Values**:
-   - After processing all vertices, the function returns two dictionaries: 
-      - `distances`: containing the shortest distances from the source to all other vertices in the graph.
-      - `predecessors`: storing the predecessor node that leads to the shortest path from the source node to each vertex.
+- **Return Values**:
+  - After processing all vertices, the function returns two dictionaries:
+    - `distances`: containing the shortest distances from the source to all other vertices in the graph.
+    - `predecessors`: storing the predecessor node that leads to the shortest path from the source node to each vertex.
 
 ### 4. Main Driver Code
 
@@ -299,7 +298,7 @@ The "Main Driver Code" section demonstrates a basic use case. You can modify the
 The code extensively uses the `logging` module to record messages about the program's execution. These messages are categorized into different levels:
 
 - **DEBUG**: Detailed information, typically useful for debugging purposes (e.g., logging each step of the algorithm).
-- **INFO**:  Confirms that things are working as expected (e.g., indicating the start and completion of Dijkstra's algorithm).
+- **INFO**: Confirms that things are working as expected (e.g., indicating the start and completion of Dijkstra's algorithm).
 - **WARNING**: Indicates potential issues that don't necessarily halt execution (e.g., attempting to add a duplicate vertex).
 - **ERROR**: Records errors that may cause the program to malfunction (e.g., invalid input types).
 
@@ -310,15 +309,15 @@ The log messages are written to the `dijkstra.log` file, providing valuable insi
 The code implements robust error handling using `try-except` blocks to catch potential exceptions and prevent abrupt program termination. The primary exception handled is the `TypeError`, which is raised if an invalid vertex type is used.
 
 - **Catching `TypeError`**: This ensures that the graph structure is maintained with valid vertex types, and any attempt to use an unsupported type is caught and logged.
-- **Re-raising Exceptions**: In the current implementation, after logging the error, the exceptions are re-raised to halt the program's execution. This is a common practice in scenarios where the program cannot recover from the error, and continuing execution might lead to unexpected behavior. 
-- **Other Error Handling**: The `dijkstra` function also includes checks to ensure that the input `graph` is a `Graph` object and that the `source` vertex exists in the graph, raising `TypeError` and `ValueError`, respectively, if these conditions are not met. 
+- **Re-raising Exceptions**: In the current implementation, after logging the error, the exceptions are re-raised to halt the program's execution. This is a common practice in scenarios where the program cannot recover from the error, and continuing execution might lead to unexpected behavior.
+- **Other Error Handling**: The `dijkstra` function also includes checks to ensure that the input `graph` is a `Graph` object and that the `source` vertex exists in the graph, raising `TypeError` and `ValueError`, respectively, if these conditions are not met.
 
 ## Key Features and Best Practices
 
 - **Object-Oriented Approach**: The use of the `Graph` class promotes code organization and encapsulation of graph-related operations.
 - **Clear Documentation**: Detailed docstrings enhance code readability and understanding.
-- **Descriptive Naming**:  Meaningful variable and method names improve code clarity.
-- **Logging for Debugging**:  Logging provides a detailed record of the program's execution flow and helps in identifying and resolving issues.
+- **Descriptive Naming**: Meaningful variable and method names improve code clarity.
+- **Logging for Debugging**: Logging provides a detailed record of the program's execution flow and helps in identifying and resolving issues.
 - **Error Handling**: Implementing error handling makes the code more robust and reliable by gracefully handling potential errors.
 - **Type Hinting**: The use of type hinting further improves code readability and allows for better static analysis.
 
@@ -326,42 +325,43 @@ The code implements robust error handling using `try-except` blocks to catch pot
 
 Contributions to this code are welcome. Please feel free to fork the repository and submit pull requests for any improvements or bug fixes.
 
-# Utility Graph Drawing code
 # Graph Visualization with Tkinter
 
-This Python script provides a visual representation of a graph, leveraging the Tkinter library for the graphical user interface. 
+This Python script provides a visual representation of a graph, leveraging the Tkinter library for the graphical user interface.
 
 ## Features:
 
 - **Visualizes Graphs:** Renders graph data stored in a JSON file.
-- **Adjacency List Format:**  Supports graphs represented using the adjacency list format.
+- **Adjacency List Format:** Supports graphs represented using the adjacency list format.
 - **Node Highlighting:** Optionally highlights nodes based on provided distances from a source vertex.
 - **Error Handling:** Includes robust error handling to gracefully manage invalid input or file errors.
-- **Detailed Logging:**  Logs key events and potential issues to a file for debugging and monitoring.
+- **Detailed Logging:** Logs key events and potential issues to a file for debugging and monitoring.
 
 ## Installation:
 
 1. **Python and Tkinter:** Ensure you have Python installed on your system. Tkinter is usually included in standard Python distributions.
-2. **Required Packages:**  No external packages beyond the Python standard library are required.
+2. **Required Packages:** No external packages beyond the Python standard library are required.
 
 ## Usage:
 
 1. **Prepare Your Graph Data:**
+
    - Create a JSON file representing your graph as an adjacency list. For example:
 
      ```json
      {
-       "A": {"B": 4, "C": 2},
-       "B": {"C": 1, "D": 5},
-       "C": {"D": 8, "E": 10},
-       "D": {"E": 2, "F": 6},
-       "E": {"F": 3},
+       "A": { "B": 4, "C": 2 },
+       "B": { "C": 1, "D": 5 },
+       "C": { "D": 8, "E": 10 },
+       "D": { "E": 2, "F": 6 },
+       "E": { "F": 3 },
        "F": {}
      }
      ```
 
      - In this format, each key in the JSON object represents a vertex in the graph.
      - The corresponding value is another dictionary representing its adjacent vertices and edge weights.
+
 2. **Run the Script:**
    - Replace `"graph.json"` in the `if __name__ == "__main__":` block with the actual path to your JSON graph file.
    - Run the script using `python graph_visualization.py` (or your preferred method of executing Python scripts).
@@ -394,15 +394,15 @@ def visualize_graph(graph_filepath, distances=None):
         ValueError: If any vertex in `distances` is not found in the graph.
         Exception: For any other unexpected errors during visualization.
     """
-    
+
     # ... (Code implementation - see the next sections for explanations)
 ```
 
 - **Arguments**:
-   - `graph_filepath (str)`: The path to the JSON file containing the graph data.
-   - `distances (dict, optional)`:  An optional dictionary where keys are vertices, and values are their distances from a source vertex (used for node highlighting).
-- **Error Handling**: 
-  - Uses `try...except` blocks to handle potential errors during file loading (`FileNotFoundError`, `json.JSONDecodeError`), data type validation (`TypeError`), and unexpected errors during visualization (`Exception`). 
+  - `graph_filepath (str)`: The path to the JSON file containing the graph data.
+  - `distances (dict, optional)`: An optional dictionary where keys are vertices, and values are their distances from a source vertex (used for node highlighting).
+- **Error Handling**:
+  - Uses `try...except` blocks to handle potential errors during file loading (`FileNotFoundError`, `json.JSONDecodeError`), data type validation (`TypeError`), and unexpected errors during visualization (`Exception`).
   - Logs error messages using the `logging` module to provide debugging information.
 
 #### 1.1. Loading the Graph Data
@@ -448,7 +448,7 @@ def visualize_graph(graph_filepath, distances=None):
   - **Graph Type Check:** It verifies if the loaded `graph` is a dictionary-like object (which is expected for an adjacency list representation).
   - **Distances Type and Consistency Check:** If `distances` are provided:
     - It checks if it's a dictionary.
-    - It verifies that every vertex in the `distances` dictionary also exists in the loaded `graph`. 
+    - It verifies that every vertex in the `distances` dictionary also exists in the loaded `graph`.
 
 #### 1.3 Tkinter Setup
 
@@ -463,7 +463,7 @@ def visualize_graph(graph_filepath, distances=None):
 ```
 
 - **Window Creation**: A main window (`window`) is created using `tk.Tk()`, and its title is set.
-- **Canvas Setup**: A `tk.Canvas` widget is created. The canvas serves as the drawing area for the graph visualization. It is initialized with a specified width, height, and a white background color. 
+- **Canvas Setup**: A `tk.Canvas` widget is created. The canvas serves as the drawing area for the graph visualization. It is initialized with a specified width, height, and a white background color.
 
 #### 1.4. Node and Edge Drawing
 
@@ -530,9 +530,9 @@ def visualize_graph(graph_filepath, distances=None):
 
 **Helper Functions:**
 
-- **`draw_node(vertex, x, y)`:**  Draws a single node (represented as a circle) with its label on the canvas. It uses `canvas.create_oval` to draw the circle and `canvas.create_text` to place the vertex label at its center. 
+- **`draw_node(vertex, x, y)`:** Draws a single node (represented as a circle) with its label on the canvas. It uses `canvas.create_oval` to draw the circle and `canvas.create_text` to place the vertex label at its center.
 
-- **`get_node_color(distance, max_distance)`:** Calculates a color along a green-to-red gradient based on the provided `distance` and the `max_distance`. This is used to visually represent the relative distances of nodes from a source vertex (if distance information is provided). 
+- **`get_node_color(distance, max_distance)`:** Calculates a color along a green-to-red gradient based on the provided `distance` and the `max_distance`. This is used to visually represent the relative distances of nodes from a source vertex (if distance information is provided).
 
 ## Logging:
 
@@ -545,4 +545,4 @@ You can customize the logging level and format in the `logging.basicConfig()` ca
 
 ## Conclusion:
 
-This documentation provides a comprehensive overview of the provided Python script for graph visualization. With its support for loading graph data from JSON files, optional node highlighting based on distances, error handling, and informative logging, this script is a useful tool for visually exploring and presenting graph structures. Remember to customize the code and experiment with your own graph data for various use cases. 
+This documentation provides a comprehensive overview of the provided Python script for graph visualization. With its support for loading graph data from JSON files, optional node highlighting based on distances, error handling, and informative logging, this script is a useful tool for visually exploring and presenting graph structures. Remember to customize the code and experiment with your own graph data for various use cases.
